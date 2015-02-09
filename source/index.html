@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="description" content="">
+
+  <title>Real Head Bouncing Ball</title>
+
+  <!-- iOS icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-57x57-precomposed.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Generic Icon -->
+  <link rel="shortcut icon" href="images/touch/touch-icon-57x57.png">
+
+  <!-- Chrome Add to Homescreen -->
+  <link rel="shortcut icon" sizes="196x196" href="images/touch/touch-icon-196x196.png">
+<!--[if lt IE 9]><link rel="stylesheet" href="css/app/app.ie8.css"><![endif]-->
+  <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" href="css/app/app.css" /><!--<![endif]-->
+  <script src="js/libs/modernizr.js"></script>
+  <script src="js/libs/headtrackr/headtrackr.js"></script>
+
+
+
+</head>
+<body>
+
+
+<header role="banner">
+  <h1>Real Head Bouncing Ball</h1>
+  <nav role="navigation">
+    <h1 class="visuallyhidden">Main Navigation</h1>
+  </nav>
+</header>
+
+
+<main class="main" role="main">
+  <h1>Main Content Goes Here</h1>
+  <video id = "camVideo" style = "visibility:hidden"></video>
+  <canvas id = "playground" width="640" height="480" style="border:1px solid display:none"></canvas>
+  <canvas id = "faceFrame" width="640" height="480" style="position: absolute; top: 0px; z-index: 100001; display: block;"></canvas>
+  <p id = "supportMsg"></p>
+  <p id = "trackMsg"></p>
+</main>
+
+
+<footer role="contentinfo">
+  <p>&copy; 2014 Company Name</p>
+</footer>
+
+<script data-main="js/main" src="js/libs/requirejs/require.js"></script>
+<script>
+  // define settings for require
+  define('settings', {
+  });
+</script>
+
+
+
+</body>
+</html>
