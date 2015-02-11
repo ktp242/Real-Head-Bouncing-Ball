@@ -1,7 +1,9 @@
 [Real Head Bouncing Ball]
 ===================
 
-[feb 4 2015 It's a test project for praticing the boilerplate.]
+Created on Feb 4 2015 by Kang at CPB 
+
+It's a test project for praticing the boilerplate. It's an interative game for audience playing bouncing ball through webcam. With the face detection library, the mechnism allows audiecne use their head to bounce the virtual ball on the screen.
 
 ## Requirements
 * [ruby](https://www.ruby-lang.org/en/)
