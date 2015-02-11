@@ -7,3 +7,56 @@
 
 /********************************************************** Layout */
 
+.main{
+	width: 100%;
+	height: 100%;
+	margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: -60px;
+	position: relative;
+	background-color: $white;
+	background-image: url("../../images/boucningBG.jpg");
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+.camVideo{
+	margin-left: auto ;
+    margin-right: auto ;
+	visibility: hidden;
+	position: absolute;
+}
+
+
+.mainCanvas{
+	height: 70%;
+	position: absolute; 
+	left: 20%;
+	top: 16%;
+}
+
+.trackMsg{
+	visibility: hidden;
+}
+
+.logo{
+	width: 18%;
+	height: auto;
+	top: 16%;
+	padding-left: 30px;
+	position: absolute; 
+} 
+
+footer[role="contentinfo"]{
+	height: 60px;
+	position: relative;
+}
+
+.footerText{
+	padding-left: 30px;
+	color: $black;
+	font-size: $font-size-6;
+
+}
