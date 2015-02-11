@@ -30,36 +30,44 @@
 <!--[if lt IE 9]><link rel="stylesheet" href="css/app/app.ie8.css"><![endif]-->
   <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" href="css/app/app.css" /><!--<![endif]-->
   <script src="js/libs/modernizr.js"></script>
-  <script src="js/libs/headtrackr/headtrackr.js"></script>
-
-
+  
 
 </head>
+
 <body>
 
-
 <header role="banner">
+<!--
   <h1>Real Head Bouncing Ball</h1>
   <nav role="navigation">
-    <h1 class="visuallyhidden">Main Navigation</h1>
+    <h1 class=""></h1>
   </nav>
+  -->
 </header>
 
 
 <main class="main" role="main">
-  <h1>Main Content Goes Here</h1>
-  <video id = "camVideo" style = "visibility:hidden"></video>
-  <canvas id = "playground" width="640" height="480" style="border:1px solid display:none"></canvas>
-  <canvas id = "faceFrame" width="640" height="480" style="position: absolute; top: 0px; z-index: 100001; display: block;"></canvas>
-  <p id = "supportMsg"></p>
-  <p id = "trackMsg"></p>
+
+  <div id = "logo" ><img src="../../images/logo.png" class = "logo"/></div>
+ 
+  <video id = "camVideo" class = "camVideo" width="640" height="480"></video>
+  <canvas class = "mainCanvas" id = "playground" width="960" height="480" style=" display: block;"></canvas>
+  <canvas class = "mainCanvas" id = "faceFrame" width="960" height="480" style="z-index: 100001; display: block;"></canvas>
+  <canvas class = "mainCanvas" id = "ballCanvas" width="960" height="480" style="z-index: 100002; display: block;"></canvas>
+  
+
+  <p class = "trackMsg" id = "supportMsg"></p>
+  <p class = "trackMsg" id = "trackMsg"></p>
 </main>
 
 
+
 <footer role="contentinfo">
-  <p>&copy; 2014 Company Name</p>
+  <p class = "footerText">&copy; by Kang 2014 at CP+B Boulder</p>
 </footer>
 
+
+<script src="js/apps/helpers/headtrackr.js"></script>
 <script data-main="js/main" src="js/libs/requirejs/require.js"></script>
 <script>
   // define settings for require

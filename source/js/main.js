@@ -14,9 +14,10 @@ require.config({
     // Core Libraries
     jquery: 'libs/jquery/jquery',
     lodash: 'libs/lodash/lodash',
-    headtrackr: 'libs/headtrackr/headtrackr',
+    headtrackr: 'apps/helpers/headtrackr.js',
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
+    ball: 'modules/ball',
 
     // Helper Modules
     helpers: 'apps/helpers'
@@ -43,6 +44,7 @@ require([
   'headtrackr',
   'getVideo',
   'trackFace',
+  'ball',
 ], function($, _, App) {
   'use strict';
 

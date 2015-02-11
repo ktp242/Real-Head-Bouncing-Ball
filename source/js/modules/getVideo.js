@@ -19,7 +19,7 @@ if (navigator.getUserMedia) {
           myStream = stream;
           // where the stream to be shown in the HTML
           camVideo = $('#camVideo')[0];
-          hasVideo=true;
+          hasVideo = true;
            // fill the stream into video tag
           camVideo.src = window.URL.createObjectURL(stream) || stream;
           camVideo.play(); }, 
@@ -65,15 +65,15 @@ function drawScreen(){
     offscreenCanvas.height= playground.height;
        
     // flip the image at the second canvas
-    offscreenCanvasCtx.translate(320, 240);
+    offscreenCanvasCtx.translate(480, 240);
     offscreenCanvasCtx.scale(-1, 1);
-    offscreenCanvasCtx.translate(-320, -240);
+    offscreenCanvasCtx.translate(-480, -240);
     
     // background
     offscreenCanvasCtx.fillStyle = '#ffffaa';
     
     // play video in the second canvas at position x=0, y=0
-    offscreenCanvasCtx.drawImage(camVideo , 0, 0, 640, 480, 0, 0, 640, 480);
+    offscreenCanvasCtx.drawImage(camVideo , 0, 80, 640, 300, 0, 0, 960, 480);
 
     // flip the video back to the main canvas
     playgroundCtx.drawImage(offscreenCanvas, 0, 0);
