@@ -14,13 +14,14 @@ require.config({
     // Core Libraries
     jquery: 'libs/jquery/jquery',
     lodash: 'libs/lodash/lodash',
-    headtrackr: 'apps/helpers/headtrackr.js',
+    
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
     ball: 'modules/ball',
 
     // Helper Modules
-    helpers: 'apps/helpers'
+    helpers: 'apps/helpers',
+    headtrackr: 'apps/helpers/headtrackr'
 
     // 3rd party
   },
