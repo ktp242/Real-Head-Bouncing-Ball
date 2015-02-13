@@ -7,26 +7,27 @@
 
 /********************************************************** Layout */
 
+.header{
+	height: auto;
+}
+
 .main{
 	width: 100%;
 	height: 100%;
-	margin-left: auto ;
-    margin-right: auto ;
+	margin-top: 0px;
+	margin-left: auto;
+    margin-right: auto;
     margin-bottom: -60px;
-	position: relative;
-	background-color: $white;
-	background-image: url("../../images/boucningBG.jpg");
-	background-size: 100% 100%;
-    background-repeat: no-repeat;
-
+	position: absolute;
 }
 
 
 .camVideo{
-	margin-left: auto ;
-    margin-right: auto ;
+	height: 70%;
+	position: absolute; 
+	left: 20%;
+	top: 5%;
 	visibility: hidden;
-	position: absolute;
 }
 
 
@@ -34,7 +35,7 @@
 	height: 70%;
 	position: absolute; 
 	left: 20%;
-	top: 16%;
+	top: 5%;
 }
 
 .trackMsg{
@@ -42,14 +43,38 @@
 }
 
 .logo{
-	width: 18%;
-	height: auto;
-	top: 16%;
-	padding-left: 30px;
-	position: absolute; 
+
+	@include image-replacement();
+    @include background-size(cover);  
+    background-image: url("../../images/logo.png");
+
+	
+	width: 20%;
+	height: 200%;
+	margin-top: 60px;
+	margin-left: 20px;
+	position: relative; 
+}
+
+.score {
+    margin-top: 240px;
+    margin-left: 100px;
+    font-size: $font-size-1;    
+}
+
+.score10{
+	margin-top: 240px;
+	margin-left: 70px;
+	font-size: $font-size-1;
+}
+
+.startBtn{
+	margin-top: 10px;
+	margin-left: 70px;
 } 
 
 footer[role="contentinfo"]{
+	margin-top: 600px;
 	height: 60px;
 	position: relative;
 }

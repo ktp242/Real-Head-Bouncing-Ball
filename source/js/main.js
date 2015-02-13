@@ -18,6 +18,7 @@ require.config({
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
     ball: 'modules/ball',
+    score: 'modules/score',
 
     // Helper Modules
     helpers: 'apps/helpers',
@@ -46,6 +47,7 @@ require([
   'getVideo',
   'trackFace',
   'ball',
+  'score',
 ], function($, _, App) {
   'use strict';
 

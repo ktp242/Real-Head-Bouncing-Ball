@@ -16,8 +16,6 @@ define('apps/master/app', [
    * Gets the application running
    */
   App.start = function() {
-    //$('main').append('<p>App Started</p>');
-    console.log('App Started');
   };
 
   return App;

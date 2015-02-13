@@ -15,7 +15,13 @@ var x = 380,
     faceAngle,
 
     redColor = "#ff0000",
-    yellowColor = '#ffff00';
+    yellowColor = '#ffff00',
+
+    hitNumber = 0,
+    level = 1,
+    levelCheck,
+
+    speed;
 
 
 // Listen to face track event, and get the coordinates of upper left point, 
@@ -50,6 +56,32 @@ function circle(x, y, r){
 }
 
 
+// Fire the how many times the player hit the ball to score.js
+// speedup hasn't work yet
+function hitBall(){
+    hitNumber ++;
+    $(document).trigger('hitBall', { passedScore : hitNumber });
+    
+    levelCheck = Math.floor(hitNumber / 10) + 1;
+
+    if (levelCheck != level) {
+       speedup();
+       setLevel();
+    }
+}
+
+function setLevel(){
+    level = levelCheck;
+}
+
+
+function speedup(){
+    speed = Math.floor(hitNumber / 10) + 1;
+    dy = dy * (speed);
+    dx = dx * (speed);
+}
+
+
 function drawBall(){
 
 	// Clear each frame on the canvas
@@ -61,7 +93,7 @@ function drawBall(){
     // Make the ball only to bounce inside the frame	
     if (x + dx + radius * 2 > w - radius * 2 || x + dx  < radius)
       dx = -dx;  
-    if (y + dy + radius * 4 > h || y + dy  < radius)
+    if (y + dy + radius * 1.6 > h || y + dy  < radius)
       dy = -dy;
 
 
@@ -70,42 +102,68 @@ function drawBall(){
     if(x > faceX - 20 && x < faceX + faceW + 20){
      
      // If the ball's y-coordinate is greater than the upper left point of the face object's
-     if (y + dy + radius * 4 > faceY){
+     if (y + dy + radius * 4 > faceY && x < faceX + (faceW + 20)/2){
      
       // IF the ball is dropping 
-      if (dy > 0){
+      if (dy > 0 && dx > 0){
+        hitBall();
         dy = -dy;
-        ballCanvasCtx.fillStyle = yellowColor;
+        dx = -dx;
         
-        // prevent accidently hit the ball by the player's chin
-        }else{ 
-         dy = dy;
-         ballCanvasCtx.fillStyle = redColor;
+      // prevent accidently hit the ball by the player's chin
+      }else if (dy > 0 && dx < 0){ 
+        hitBall();
+        dy = -dy;
+        dx = dx;
         
-       }
-      }else{
+      }else if (dy < 0){
+           dy = dy;
+      } 
+      
+     } else if (y + dy + radius * 4 > faceY && x > faceX + (faceW + 20)/2){
+      if (dy > 0 && dx > 0){
+        hitBall();
+        dy = -dy;
+        dx = dx;
+       
+      }else if (dy > 0 && dx < 0){
+        hitBall();
+        dy = -dy;
+        dx = -dx;
+
+
+      }else if (dy < 0){
         dy = dy;
-        ballCanvasCtx.fillStyle = redColor;
+      }
     }
     
     }else{
-        dy = dy;
-        ballCanvasCtx.fillStyle = redColor;
+     dy = dy;
     }
     
     // Set the speed of the ball
 	x = x + dx;
     y = y + dy;
-
+    
     // Set animation function call back
     requestAnimationFrame(drawBall);
-
 }
 
 // Start the animation
 $('#camVideo').on('play', function(){
-    requestAnimationFrame(drawBall);
+
+    // When video is available, the button shows for the next step
+    startGame = $('.main').append('<button class="startBtn">Click to Start</button>');
+
+    // Click the button and wait 3 seconds to  start
+    $('.startBtn').on('click', function(){
+        setTimeout(function(){
+            requestAnimationFrame(drawBall);
+        }, 3000);
+              
+    });
 });
+
 
 
 
