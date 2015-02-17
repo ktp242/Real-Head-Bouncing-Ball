@@ -35,7 +35,7 @@
 
 .main{
 	width: 100%;
-	height: 480px;
+	height: 540px;
 	position: relative;
 }
 
@@ -43,7 +43,7 @@
 	width: 200px;
 	height: auto;
 	float: left;
-	margin: 240px 0 0 15px;
+	margin: 240px 40px 0 15px;
 }
 
 .score {
@@ -59,17 +59,42 @@
 }
 
 .startBtn{
-    margin: 0 0 0 70px;
+    margin: 20px 0 0 70px;
+
+    background: $blue;
+    background-image: -webkit-linear-gradient(top, $blue, $darkerblue);
+    background-image: -moz-linear-gradient(top, $blue, $darkerblue);
+    background-image: -ms-linear-gradient(top, $blue, $darkerblue);
+    background-image: -o-linear-gradient(top, $blue, $darkerblue);
+    background-image: linear-gradient(to bottom, $blue, $darkerblue);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: $white;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+
+    &:hover{
+       background: $lighterblue;
+       background-image: -webkit-linear-gradient(top, $lighterblue, $blue);
+       background-image: -moz-linear-gradient(top, $lighterblue, $blue);
+       background-image: -ms-linear-gradient(top, $lighterblue, $blue);
+       background-image: -o-linear-gradient(top, $lighterblue, $blue);
+       background-image: linear-gradient(to bottom, $lighterblue, $blue);
+       text-decoration: none;
+       color: darken($white, 40%);
+    }
 } 
 
 
 .display{
-	margin: 0 0 0 360px;
 }
 
 .camVideo{
 	position: absolute;
-	left: 20%;
+	left: 24%;
 	top: 5%;
 	visibility: hidden;
 }
@@ -96,23 +121,4 @@ footer[role="contentinfo"]{
 	padding-left: 30px;
 	color: $white;
 	font-size: $font-size-6;
-}
-
-
-/************************* for the test */
-
-.first{
-	background-color: red;
-	width: 100%;
-	height: 800px;
-}
-
-.second{
-	@extend .first;
-	background-color : green;
-}
-
-.third{
-	@extend .first;
-	background-color : yellow;
 }

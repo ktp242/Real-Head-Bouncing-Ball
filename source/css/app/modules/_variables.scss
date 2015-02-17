@@ -19,8 +19,10 @@ $L: 'min-width:'+ $breakpoint-l;
 $white: #fff;
 $black: #000;
 $blue: #00ffff;
+$darkerblue: #2980b9;
+$lighterblue: lighten($blue, 20%);
 $backgroundblue: #70AAFF;
-$backgroundred: #CC0000;
+
 
 
 // Typography
