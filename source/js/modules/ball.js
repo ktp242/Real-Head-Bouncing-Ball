@@ -153,7 +153,7 @@ function drawBall(){
 $('#camVideo').on('play', function(){
 
     // When video is available, the button shows for the next step
-    startGame = $('.main').append('<button class="startBtn">Click to Start</button>');
+    startGame = $('.sidebar').append('<button class="startBtn">Click to Start</button>');
 
     // Click the button and wait 3 seconds to  start
     $('.startBtn').on('click', function(){

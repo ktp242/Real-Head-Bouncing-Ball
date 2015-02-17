@@ -39,6 +39,7 @@
   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 */
 
+
 html {
   @include box-sizing('border-box');
 }
@@ -61,8 +62,7 @@ body {
 }
 
 body {
-  background-color: $backgroundred;
-  background-image: url("../../images/boucningBG.jpg");
+  background-color: $black;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }

@@ -37,24 +37,27 @@
 <body>
 
 <header class="header">
-
-  <h1 class="logo">Bouncing</h1>
-
+ <div class="logo">
+  <h1 class="logoText">AUGMENT</h1>
+  <h1 class="logoText">BOUNCING</h1>
+  <h1 class="logoText">BALL</h1>
+ </div>
 </header>
 
 
 <main class="main" role="main">
 
- 
+<section class="sidebar">
   <div id="score" class="score"></div>
+</section>
+
+<section class="display">
   <video id="camVideo" class="camVideo" width="640" height="480"></video>
   <canvas class="mainCanvas" id="playground" width="960" height="480" style=" display: block;"></canvas>
   <canvas class="mainCanvas" id="faceFrame" width="960" height="480" style="z-index: 100001; display: block;"></canvas>
   <canvas class="mainCanvas" id="ballCanvas" width="960" height="480" style="z-index: 100002; display: block;"></canvas>
-  
+</section>
 
-  <p class="trackMsg" id="supportMsg"></p>
-  <p class="trackMsg" id="trackMsg"></p>
 </main>
 
 

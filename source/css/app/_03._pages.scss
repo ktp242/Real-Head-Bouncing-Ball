@@ -8,23 +8,67 @@
 /********************************************************** Layout */
 
 .header{
-	height: auto;
+	position: relative;
+	height: 40px;
+	margin: 0 0 0 0;
+	background-color: yellow;
+}
+
+.logo{	
+	max-width: 100%;
+	width: 40px;
+	height: 40px;
+	float: left;
+    padding: 15px 0 0 20px;
+	position: relative;
+	display: block;
+}
+
+.logoText{
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-1;
+    -webkit-text-fill-color: $black;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: $blue;
+    margin: -4px 0 0 0;
 }
 
 .main{
 	width: 100%;
-	height: 100%;
-	margin-top: 0px;
-	margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -60px;
-	position: absolute;
+	height: 480px;
+	position: relative;
 }
 
+.sidebar{
+	width: 200px;
+	height: auto;
+	float: left;
+	margin: 240px 0 0 15px;
+}
+
+.score {
+	padding: 0 0 0 100px;
+    font-size: $font-size-1;
+    color: $white;    
+}
+
+.score10{
+	padding: 0 0 0 70px;
+	font-size: $font-size-1;
+	color: $white;    
+}
+
+.startBtn{
+    margin: 0 0 0 70px;
+} 
+
+
+.display{
+	margin: 0 0 0 360px;
+}
 
 .camVideo{
-	height: 70%;
-	position: absolute; 
+	position: absolute;
 	left: 20%;
 	top: 5%;
 	visibility: hidden;
@@ -32,56 +76,43 @@
 
 
 .mainCanvas{
-	height: 70%;
-	position: absolute; 
-	left: 20%;
-	top: 5%;
+	position: absolute;
+	left: 24%;
+	top: 1%;
 }
 
 .trackMsg{
 	visibility: hidden;
 }
 
-.logo{
-
-	@include image-replacement();
-    @include background-size(cover);  
-    background-image: url("../../images/logo.png");
-
-	
-	width: 20%;
-	height: 200%;
-	margin-top: 60px;
-	margin-left: 20px;
-	position: relative; 
-}
-
-.score {
-    margin-top: 240px;
-    margin-left: 100px;
-    font-size: $font-size-1;    
-}
-
-.score10{
-	margin-top: 240px;
-	margin-left: 70px;
-	font-size: $font-size-1;
-}
-
-.startBtn{
-	margin-top: 10px;
-	margin-left: 70px;
-} 
 
 footer[role="contentinfo"]{
-	margin-top: 600px;
+	margin-top: 60px;
 	height: 60px;
 	position: relative;
 }
 
 .footerText{
 	padding-left: 30px;
-	color: $black;
+	color: $white;
 	font-size: $font-size-6;
+}
 
+
+/************************* for the test */
+
+.first{
+	background-color: red;
+	width: 100%;
+	height: 800px;
+}
+
+.second{
+	@extend .first;
+	background-color : green;
+}
+
+.third{
+	@extend .first;
+	background-color : yellow;
 }
