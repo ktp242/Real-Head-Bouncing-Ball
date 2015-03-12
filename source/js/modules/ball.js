@@ -32,13 +32,19 @@ document.addEventListener("facetrackingEvent", function( event ) {
     faceW = event.width;
     faceH = event.height;
     faceAngle = event.angle; 
- 
 });
 
 
 var ballCanvasCtx = $('#ballCanvas')[0].getContext('2d');
-var w = $('#ballCanvas').width();
-var h = $('#ballCanvas').height();
+
+$(document).on('resize', function(event, changeSize){
+    var w = changeSize.newWidth;
+    var h = changeSize.newHeight; 
+      
+    // Set the drawing on all the canvases fit the dimensions
+    ballCanvas.width = w;
+    ballCanvas.height = h;
+});
 
 
 function clearCanvas(){
@@ -85,9 +91,9 @@ function speedup(){
 function drawBall(){
 
 	// Clear each frame on the canvas
-    clearCanvas();
+  clearCanvas();
 	
-    // Draw the circle
+  // Draw the circle
 	circle(x, y, radius);
 
     // Make the ball only to bounce inside the frame	
@@ -142,7 +148,7 @@ function drawBall(){
     }
     
     // Set the speed of the ball
-	x = x + dx;
+	  x = x + dx;
     y = y + dy;
     
     // Set animation function call back

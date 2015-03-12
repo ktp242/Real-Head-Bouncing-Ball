@@ -35,10 +35,11 @@ htracker.init(camVideo, playground);
 htracker.start();
 
 // create the rectangle following the head
-var faceFrameCtx = $('#faceFrame')[0].getContext('2d');
+var faceFrame = $('#faceFrame')[0];
+var faceFrameCtx = faceFrame.getContext('2d');
 document.addEventListener("facetrackingEvent", function( event ) {
 				// clear canvas
-				faceFrameCtx.clearRect(0,0,960,480);
+				faceFrameCtx.clearRect(0,0,offscreenCanvas.width,offscreenCanvas.height);
 				// once we have stable tracking, draw rectangle
 				if (event.detection == "CS") {
 					faceFrameCtx.translate(event.x, event.y);

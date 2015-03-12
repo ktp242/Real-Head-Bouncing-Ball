@@ -49,40 +49,55 @@ if ( !window.requestAnimationFrame ) {
  
 }
 
+var w,h;
+
+
+$(document).on('resize', function(event, changeSize){
+
+  w = changeSize.newWidth;
+  h = changeSize.newHeight; 
+  
+  // Set the drawing on all the canvases fit the dimensions
+  playground.width = w;
+  playground.height = h;
+
+});
+
+
 function drawScreen(){
-    if(!hasVideo)
-    console.log('video is not ready'); 
 
-    // select the main canvas
-    playground = $('#playground')[0];
-    playgroundCtx = playground.getContext("2d");
+  if(!hasVideo)
+  console.log('video is not ready'); 
 
-    // create a second canvas for double buffering to prevent image flickering
-    offscreenCanvas = document.createElement('canvas');
-    offscreenCanvasCtx = offscreenCanvas.getContext('2d');
+  // select the main canvas
+  playground = $('#playground')[0];
+  playgroundCtx = playground.getContext("2d");
 
-    offscreenCanvas.width = playground.width;
-    offscreenCanvas.height= playground.height;
-       
-    // flip the image at the second canvas
-    offscreenCanvasCtx.translate(480, 240);
-    offscreenCanvasCtx.scale(-1, 1);
-    offscreenCanvasCtx.translate(-480, -240);
-    
-    // background
-    offscreenCanvasCtx.fillStyle = '#ffffaa';
-    
-    // play video in the second canvas at position x=0, y=0
-    offscreenCanvasCtx.drawImage(camVideo , 0, 80, 640, 300, 0, 0, 960, 480);
+  // create a second canvas for double buffering to prevent image flickering
+  var offscreenCanvas = document.createElement('canvas');
+  var offscreenCanvasCtx = offscreenCanvas.getContext('2d');
 
-    // flip the video back to the main canvas
-    playgroundCtx.drawImage(offscreenCanvas, 0, 0);
+ offscreenCanvas.width = w;
+  offscreenCanvas.height = h;
+
+  // flip the image at the second canvas
+  offscreenCanvasCtx.translate(offscreenCanvas.width / 2, offscreenCanvas.height / 2);
+  offscreenCanvasCtx.scale(-1, 1);
+  offscreenCanvasCtx.translate(-offscreenCanvas.width /2 , -offscreenCanvas.height / 2); 
      
-    // set to darw the video with requestAnimationFrame
-    requestAnimationFrame(drawScreen);
+  // background
+  offscreenCanvasCtx.fillStyle = '#ffffaa';
+  
+  // play video in the second canvas at position x=0, y=0
+  offscreenCanvasCtx.drawImage(camVideo, 0, 135, 540, 405, 0, 0, w, h);
 
-    }
+  // flip the video back to the main canvas
+  playgroundCtx.drawImage(offscreenCanvas, 0, 0);
+   
+  // set to darw the video with requestAnimationFrame
+  requestAnimationFrame(drawScreen);
 
+}
 
 requestAnimationFrame(drawScreen);
 

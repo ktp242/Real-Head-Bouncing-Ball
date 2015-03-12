@@ -15,6 +15,8 @@ require.config({
     jquery: 'libs/jquery/jquery',
     lodash: 'libs/lodash/lodash',
     
+    // Customized Modules
+    resizeCanvas: 'modules/resizeCanvas',
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
     ball: 'modules/ball',
@@ -44,10 +46,11 @@ require([
   'lodash',
   'apps/master/app',
   'headtrackr',
+  'resizeCanvas',
   'getVideo',
   'trackFace',
   'ball',
-  'score',
+  'score'
 ], function($, _, App) {
   'use strict';
 
