@@ -7,7 +7,7 @@
 function resizeGame(){
 
   // Grab the parent elements of each of the canvases
-  var display  = $('.display');
+  var display  = document.getElementsByClassName('.display');
 
   // The ratio of the canvases width to height is 2 / 1 
   var canvasWToH = 2;
@@ -43,7 +43,6 @@ function resizeGame(){
   }
 
   // Set the top left corner back to original place. Look up CSS .display.
-  
   for (i = 0; i < display.length; i ++){
     display[i].style.marginTop = (-newHeight / 2) + 'px';
     display[i].style.marginLeft = (-newWidth / 2) + 'px';
@@ -51,14 +50,19 @@ function resizeGame(){
 
   // Set dynamic font size
 
-  // Trigger the resize event along with the new width and the new height. Send the numbers out
-  $(document).trigger('resize', { newWidth : newWidth, newHeight : newHeight });
+  // Return the new width and the new height
+  return {
+    newWidth : newWidth, 
+    newHeight : newHeight 
+  }
 
 }
+
+resizeGame();
 
 // Listen to the size change of the window and fire resizeGame function 
 window.addEventListener("resize", resizeGame, false);
 window.addEventListener("orientationchange", resizeGame, false);
 
 // Set the size of canvases once the page is loaded
-window.addEventListener("load", resizeGame, false);
+//window.addEventListener("load", resizeGame, false);

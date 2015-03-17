@@ -49,10 +49,9 @@ if ( !window.requestAnimationFrame ) {
  
 }
 
-var w,h;
+var w, h, playground;
 
-
-$(document).on('resize', function(event, changeSize){
+window.addEventListener('resizeGame', function(changeSize){
 
   w = changeSize.newWidth;
   h = changeSize.newHeight; 
@@ -77,7 +76,7 @@ function drawScreen(){
   var offscreenCanvas = document.createElement('canvas');
   var offscreenCanvasCtx = offscreenCanvas.getContext('2d');
 
- offscreenCanvas.width = w;
+  offscreenCanvas.width = w;
   offscreenCanvas.height = h;
 
   // flip the image at the second canvas
@@ -89,10 +88,10 @@ function drawScreen(){
   offscreenCanvasCtx.fillStyle = '#ffffaa';
   
   // play video in the second canvas at position x=0, y=0
-  offscreenCanvasCtx.drawImage(camVideo, 0, 135, 540, 405, 0, 0, w, h);
+  offscreenCanvasCtx.drawImage(camVideo, 0, 90, 720, 450, 0, 0, w, h);
 
   // flip the video back to the main canvas
-  playgroundCtx.drawImage(offscreenCanvas, 0, 0);
+  playgroundCtx.drawImage(offscreenCanvas, 0, 0, w, h, 0, 0, w, h);
    
   // set to darw the video with requestAnimationFrame
   requestAnimationFrame(drawScreen);

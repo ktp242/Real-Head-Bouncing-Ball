@@ -34,12 +34,26 @@ var htracker = new headtrackr.Tracker({ui : false, headPosition : false, calcAng
 htracker.init(camVideo, playground);
 htracker.start();
 
+
 // create the rectangle following the head
 var faceFrame = $('#faceFrame')[0];
+
+// listen to the change of the window and get the new size of the canvases
+$(document).on('resize', function(event, changeSize){
+
+  w = changeSize.newWidth;
+  h = changeSize.newHeight; 
+  
+  // Set the drawing on all the canvases fit the dimensions
+  faceFrame.width = w;
+  faceFrame.height = h;
+
+});
+
 var faceFrameCtx = faceFrame.getContext('2d');
 document.addEventListener("facetrackingEvent", function( event ) {
 				// clear canvas
-				faceFrameCtx.clearRect(0,0,offscreenCanvas.width,offscreenCanvas.height);
+				faceFrameCtx.clearRect(0,0,faceFrame.width,faceFrame.height);
 				// once we have stable tracking, draw rectangle
 				if (event.detection == "CS") {
 					faceFrameCtx.translate(event.x, event.y);
