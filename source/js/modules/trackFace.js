@@ -1,9 +1,14 @@
 // This module is to track the user's face on the video
 // created by Kang Peng 20150206
+define([
+	'headtrackr',
+	'jquery'
+	], function(headtrackr, $) {
+  'use strict';
 
 
 // add some custom messaging			
-statusMessages = {
+var statusMessages = {
 	"whitebalance" : "checking for stability of camera whitebalance",
 	"detecting" : "Detecting face",
 	"hints" : "Hmm. Detecting the face is taking a long time",
@@ -12,7 +17,7 @@ statusMessages = {
 	"found" : "Tracking face"
 };
 			
-supportMessages = {
+var supportMessages = {
 	"no getUserMedia" : "Unfortunately, <a href='http://dev.w3.org/2011/webrtc/editor/getusermedia.html'>getUserMedia</a> is not supported in your browser. Try <a href='http://www.opera.com/browser/'>downloading Opera 12</a> or <a href='http://caniuse.com/stream'>another browser that supports getUserMedia</a>. Now using fallback video for facedetection.",
 	"no camera" : "No camera found. Using fallback video for facedetection."
 };
@@ -26,6 +31,8 @@ document.addEventListener("headtrackrStatus", function(event) {
 		}
 }, true);
 
+console.log("headtrackr");
+window.tracker = headtrackr;
 
 // create the instance of headtrackr and start
 var htracker = new headtrackr.Tracker({ui : false, headPosition : false, calcAngles: true});
@@ -48,4 +55,5 @@ document.addEventListener("facetrackingEvent", function( event ) {
 					faceFrameCtx.rotate((Math.PI/2)-event.angle);
 					faceFrameCtx.translate(-event.x, -event.y);
 	}
+});
 });
