@@ -2,7 +2,6 @@
 // * audience face.
 // * created by Kang Peng 20150211
 
-
 define([
   'jquery'
   ], function($) {
@@ -69,6 +68,7 @@ define([
       $(document).trigger('hitBall', { passedScore : hitNumber });
       
       levelCheck = Math.floor(hitNumber / 10) + 1;
+>>>>>>> a5415fb64c88ddeb461e0fda129d5fbcae1e6719
 
       if (levelCheck != level) {
          speedup();
@@ -90,11 +90,19 @@ define([
 
   function drawBall(){
 
+<<<<<<< HEAD
+	// Clear each frame on the canvas
+  clearCanvas();
+	
+  // Draw the circle
+	circle(x, y, radius);
+=======
   	// Clear each frame on the canvas
       clearCanvas();
   	
       // Draw the circle
   	circle(x, y, radius);
+>>>>>>> a5415fb64c88ddeb461e0fda129d5fbcae1e6719
 
       // Make the ball only to bounce inside the frame	
       if (x + dx + radius * 2 > w - radius * 2 || x + dx  < radius)
@@ -170,6 +178,39 @@ define([
       });
   });
 
+<<<<<<< HEAD
+      }else if (dy < 0){
+        dy = dy;
+      }
+    }
+    
+    }else{
+     dy = dy;
+    }
+    
+    // Set the speed of the ball
+	  x = x + dx;
+    y = y + dy;
+    
+    // Set animation function call back
+    requestAnimationFrame(drawBall);
+}
+
+// Start the animation
+$('#camVideo').on('play', function(){
+
+    // When video is available, the button shows for the next step
+    startGame = $('.sidebar').append('<button class="startBtn">Click to Start</button>');
+
+    // Click the button and wait 3 seconds to  start
+    $('.startBtn').on('click', function(){
+        setTimeout(function(){
+            requestAnimationFrame(drawBall);
+        }, 3000);
+              
+    });
+=======
+>>>>>>> a5415fb64c88ddeb461e0fda129d5fbcae1e6719
 });
 
 
