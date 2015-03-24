@@ -1,5 +1,5 @@
 {
-  "name": "Real Head Bouncing Ball",
+  "name": "RealHeadBouncingBall",
   "version": "0.0.1",
   "scripts": {
     "postinstall": "node npm-postinstall.js"

@@ -1,6 +1,10 @@
 // This module is to get video from the web cam, flip it horizontal, and show it on the screen
 // created by Kang Peng 20150206
 
+define([
+  'jquery'
+  ], function($) {
+  'use strict';
 
 
 // set up the local video object
@@ -16,9 +20,9 @@ if (navigator.getUserMedia) {
     navigator.getUserMedia({video: true, audio: false}, 
          
          function(stream) {
-          myStream = stream;
+          var myStream = stream;
           // where the stream to be shown in the HTML
-          camVideo = $('#camVideo')[0];
+          var camVideo = $('#camVideo')[0];
           hasVideo = true;
            // fill the stream into video tag
           camVideo.src = window.URL.createObjectURL(stream) || stream;
@@ -69,8 +73,8 @@ function drawScreen(){
   console.log('video is not ready'); 
 
   // select the main canvas
-  playground = $('#playground')[0];
-  playgroundCtx = playground.getContext("2d");
+  var playground = $('#playground')[0];
+  var playgroundCtx = playground.getContext("2d");
 
   // create a second canvas for double buffering to prevent image flickering
   var offscreenCanvas = document.createElement('canvas');
@@ -100,4 +104,5 @@ function drawScreen(){
 
 requestAnimationFrame(drawScreen);
 
+});
 

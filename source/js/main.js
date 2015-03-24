@@ -34,6 +34,21 @@ require.config({
   shim: {
     lodash: {
       exports: '_'
+    },
+
+    headtrackr: {
+      includes: ['jquery'],
+      exports: 'headtrackr'
+    },
+
+    trackFace: {
+      includes: ['headtrackr'],
+      exports: 'trackFace'
+    },
+
+    getVideo: {
+      includes: ['jquery'],
+      exports: 'getVideo'
     }
   }
 }); // end require.config
