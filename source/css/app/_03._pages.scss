@@ -7,103 +7,119 @@
 
 /********************************************************** Layout */
 
+*{
+	margin: 0;
+	padding: 0;
+}
+
 .header{
-	position: relative;
+	background-color: $black;
 	height: 40px;
 	margin: 0 0 0 0;
-	background-color: yellow;
+	position: relative;
 }
 
 .logo{	
-	max-width: 100%;
-	width: 40px;
-	height: 40px;
-	float: left;
-    padding: 15px 0 0 20px;
-	position: relative;
 	display: block;
+	float: left;
+	height: 40px;
+	max-width: 100%;
+	position: relative;
+	width: 40px;
+	z-index: 20000;
+    padding: 15px 0 0 20px;
 }
 
 .logoText{
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
 	font-size: $font-size-1;
     -webkit-text-fill-color: $black;
-    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: $blue;
+    -webkit-text-stroke-width: 1.5px;
     margin: -4px 0 0 0;
 }
 
 .main{
-	width: 100%;
-	height: 540px;
+	height: 0;
+	min-height: 100%;
+	padding-bottom: -80px;
+	position: relative;
+}
+
+.content{
+	background-color: $black;
+	min-height: 100%;
 	position: relative;
 }
 
 .sidebar{
-	width: 200px;
-	height: auto;
 	float: left;
+	height: auto;
 	margin: 240px 40px 0 15px;
+	position: relative;
+	width: 200px;
+	z-index: 100003;
 }
 
 .score {
 	padding: 0 0 0 100px;
+    color: $white;   
     font-size: $font-size-1;
-    color: $white;    
 }
 
 .score10{
-	padding: 0 0 0 70px;
-	font-size: $font-size-1;
 	color: $white;    
+	font-size: $font-size-1;
+	padding: 0 0 0 70px;
 }
 
 .startBtn{
-    margin: 20px 0 0 70px;
-
-    background: $blue;
-    background-image: -webkit-linear-gradient(top, $blue, $darkerblue);
+    -moz-border-radius: 28;
+    -webkit-border-radius: 28;
     background-image: -moz-linear-gradient(top, $blue, $darkerblue);
     background-image: -ms-linear-gradient(top, $blue, $darkerblue);
     background-image: -o-linear-gradient(top, $blue, $darkerblue);
+    background-image: -webkit-linear-gradient(top, $blue, $darkerblue);
     background-image: linear-gradient(to bottom, $blue, $darkerblue);
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
+    background: $blue;
     border-radius: 28px;
-    font-family: Arial;
     color: $white;
+    font-family: Arial;
     font-size: 18px;
+    margin: 20px 0 0 70px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
 
     &:hover{
-       background: $lighterblue;
-       background-image: -webkit-linear-gradient(top, $lighterblue, $blue);
        background-image: -moz-linear-gradient(top, $lighterblue, $blue);
        background-image: -ms-linear-gradient(top, $lighterblue, $blue);
        background-image: -o-linear-gradient(top, $lighterblue, $blue);
+       background-image: -webkit-linear-gradient(top, $lighterblue, $blue);
        background-image: linear-gradient(to bottom, $lighterblue, $blue);
-       text-decoration: none;
+       background: $lighterblue;
        color: darken($white, 40%);
+       text-decoration: none;
     }
 } 
 
 
 .display{
+	left: 50%;
+	position: absolute;
+	top: 50%;
 }
 
 .camVideo{
+	left: 0;
 	position: absolute;
-	left: 24%;
-	top: 5%;
+	top: 0;
 	visibility: hidden;
 }
 
 
 .mainCanvas{
-	position: absolute;
-	left: 24%;
-	top: 1%;
+	height: 100%;
+	width: 100%;
 }
 
 .trackMsg{
@@ -112,13 +128,16 @@
 
 
 footer[role="contentinfo"]{
-	margin-top: 60px;
-	height: 60px;
+	background-color: $black;
+	clear: both;
+	display: block;
+	height: 80px;
+	margin-top: -80px;
 	position: relative;
 }
 
 .footerText{
-	padding-left: 30px;
-	color: $white;
+	color: $blue;
 	font-size: $font-size-6;
+	padding: 10px 0 0 30px;
 }

@@ -2,7 +2,6 @@
 // * audience face.
 // * created by Kang Peng 20150211
 
-
 define([
   'jquery'
   ], function($) {
@@ -90,11 +89,11 @@ define([
 
   function drawBall(){
 
-  	// Clear each frame on the canvas
+  	  // Clear each frame on the canvas
       clearCanvas();
   	
       // Draw the circle
-  	circle(x, y, radius);
+  	  circle(x, y, radius);
 
       // Make the ball only to bounce inside the frame	
       if (x + dx + radius * 2 > w - radius * 2 || x + dx  < radius)
@@ -148,7 +147,7 @@ define([
       }
       
       // Set the speed of the ball
-  	x = x + dx;
+  	  x = x + dx;
       y = y + dy;
       
       // Set animation function call back
@@ -169,7 +168,6 @@ define([
                 
       });
   });
-
 });
 
 

@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-  <meta name="description" content="">
+    <meta name="description" content="">
 
-  <title>Real Head Bouncing Ball</title>
+    <title>Real Head Bouncing Ball</title>
 
-  <!-- iOS icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/apple-touch-icon-144x144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/apple-touch-icon-114x114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/apple-touch-icon-72x72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-57x57-precomposed.png">
+    <!-- iOS icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-57x57-precomposed.png">
 
-  <!-- Tile icon for Win8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-  <meta name="msapplication-TileColor" content="#3372DF">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
 
-  <!-- Generic Icon -->
-  <link rel="shortcut icon" href="images/touch/touch-icon-57x57.png">
+    <!-- Generic Icon -->
+    <link rel="shortcut icon" href="images/touch/touch-icon-57x57.png">
 
-  <!-- Chrome Add to Homescreen -->
-  <link rel="shortcut icon" sizes="196x196" href="images/touch/touch-icon-196x196.png">
-<!--[if lt IE 9]><link rel="stylesheet" href="css/app/app.ie8.css"><![endif]-->
-  <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" href="css/app/app.css" /><!--<![endif]-->
-  <script src="js/libs/modernizr.js"></script>
-  
+    <!-- Chrome Add to Homescreen -->
+    <link rel="shortcut icon" sizes="196x196" href="images/touch/touch-icon-196x196.png">
+    <!--[if lt IE 9]><link rel="stylesheet" href="css/app/app.ie8.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" href="css/app/app.css" /><!--<![endif]-->
+    <script src="js/libs/modernizr.js"></script>
+  </head>
 
-</head>
+  <body>
 
-<body>
-
-<header class="header">
- <div class="logo">
-  <h1 class="logoText">AUGMENT</h1>
-  <h1 class="logoText">BOUNCING</h1>
-  <h1 class="logoText">BALL</h1>
- </div>
-</header>
+    <header class="header">
+     <div class="logo">
+      <h1 class="logoText">AUGMENT</h1>
+      <h1 class="logoText">BOUNCING</h1>
+      <h1 class="logoText">BALL</h1>
+     </div>
+    </header>
 
 
-<main class="main" role="main">
+    <main class="main" role="main">
 
-<section class="sidebar">
-  <div id="score" class="score"></div>
-</section>
+    <div class="content">
 
-<section class="display">
-  <video id="camVideo" class="camVideo" width="640" height="480"></video>
-  <canvas class="mainCanvas" id="playground" width="960" height="480" style=" display: block;"></canvas>
-  <canvas class="mainCanvas" id="faceFrame" width="960" height="480" style="z-index: 100001; display: block;"></canvas>
-  <canvas class="mainCanvas" id="ballCanvas" width="960" height="480" style="z-index: 100002; display: block;"></canvas>
-</section>
+    <section class="display">
+      <video id="camVideo" class="camVideo" width="720" height="540"></video>
+      <canvas class="mainCanvas" id="playground" style="display: block;"></canvas>
+    </section>
+    <section class="display">
+      <canvas class="mainCanvas" id="faceFrame" style="z-index: 100001; display: block;"></canvas>
+    </section>
+    <section class="display">
+      <canvas class="mainCanvas" id="ballCanvas" style="z-index: 100002; display: block;"></canvas>
+    </section>
 
-</main>
+    <section class="sidebar">
+      <div id="score" class="score"></div>
+    </section>
 
+    </div>
 
+    </main>
 
-<footer role="contentinfo">
-  <p class="footerText">&copy; by Kang 2015 at CP+B Boulder CO</p>
-</footer>
-
-
-<script data-main="js/main" src="js/libs/requirejs/require.js"></script>
-<script>
-  // define settings for require
-  define('settings', {
-  });
-</script>
+    <footer role="contentinfo">
+      <p class="footerText">&copy; By Kang Peng 2015 at CP+B Boulder CO</p>
+    </footer>
 
 
-</body>
+    <script src="js/apps/helpers/headtrackr.js"></script>
+    <script data-main="js/main" src="js/libs/requirejs/require.js"></script>
+    <script>
+      // define settings for require
+      define('settings', {
+      });
+    </script>
+    
+    <!-- The code for browser sync
+    <script type='text/javascript' id="__bs_script__">
+      //<![CDATA[
+      document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.2.2.js'><\/script>".replace("HOST", location.hostname));
+      //]]>
+    </script>
+    -->
+  </body>
 </html>
