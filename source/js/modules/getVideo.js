@@ -6,7 +6,6 @@ define([
   ], function($) {
   'use strict';
 
-
 // set up the local video object
 // way to get the video depends on different browsers      
 window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
@@ -53,7 +52,7 @@ if ( !window.requestAnimationFrame ) {
  
 }
 
-var w, h, playground;
+var w, h, playground, playgroundCtx, offscreenCanvas, offscreenCanvasCtx;
 
 window.addEventListener('resizeGame', function(changeSize){
 
@@ -73,12 +72,12 @@ function drawScreen(){
   console.log('video is not ready'); 
 
   // select the main canvas
-  var playground = $('#playground')[0];
-  var playgroundCtx = playground.getContext("2d");
+  playground = $('#playground')[0];
+  playgroundCtx = playground.getContext("2d");
 
   // create a second canvas for double buffering to prevent image flickering
-  var offscreenCanvas = document.createElement('canvas');
-  var offscreenCanvasCtx = offscreenCanvas.getContext('2d');
+  offscreenCanvas = document.createElement('canvas');
+  offscreenCanvasCtx = offscreenCanvas.getContext('2d');
 
   offscreenCanvas.width = w;
   offscreenCanvas.height = h;

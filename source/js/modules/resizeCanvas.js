@@ -3,11 +3,15 @@
 // * http://www.html5rocks.com/en/tutorials/casestudies/gopherwoord-studios-resizing-html5-games/
 // * created by Kang Peng 20150309
 
+define([
+  'jquery'
+  ], function($) {
+  'use strict';
 
 function resizeGame(){
 
   // Grab the parent elements of each of the canvases
-  var display  = document.getElementsByClassName('.display');
+  var displays  = document.getElementsByClassName('display');
 
   // The ratio of the canvases width to height is 2 / 1 
   var canvasWToH = 2;
@@ -24,28 +28,28 @@ function resizeGame(){
     newWidth = newHeight * canvasWToH;
     
     // Set the attributes to each parent of the canvas
-    for (i = 0; i < display.lenght; i ++){
-      display[i].style.height = newHeight + 'px';
-      display[i].style.width = newWidth + 'px';
-    }
-    console.log(newHeight+","+newWidth);
+    for ( var i = 0; i < displays.lenght; i ++){
+      displays[i].style.height = newHeight + 'px';
+      displays[i].style.width = newWidth + 'px';
+     }
+    console.log(displays[0].style.height+","+displays[0].style.width);
   } else {
     
     // If the window ratio is taller, make the canvas fit the height and leave top and bottom bars 
     newHeight = newWidth / canvasWToH;
     
     // Set the attributes to each parent of the canvas
-    for (i = 0; i < display.length; i ++){
-      display[i].style.width = newWidth + 'px';
-      display[i].style.height = newHeight + 'px';
-    }
-    console.log(newHeight+","+newWidth);
+    for ( var i = 0; i < displays.length; i ++){
+      displays[i].style.width = newWidth + 'px';
+      displays[i].style.height = newHeight + 'px';
+     }
+    //console.log(newHeight+","+newWidth);
   }
 
   // Set the top left corner back to original place. Look up CSS .display.
-  for (i = 0; i < display.length; i ++){
-    display[i].style.marginTop = (-newHeight / 2) + 'px';
-    display[i].style.marginLeft = (-newWidth / 2) + 'px';
+  for ( var i = 0; i < displays.length; i ++){
+    displays[i].style.marginTop = (-newHeight / 2) + 'px';
+    displays[i].style.marginLeft = (-newWidth / 2) + 'px';
   }
 
   // Set dynamic font size
@@ -66,3 +70,5 @@ window.addEventListener("orientationchange", resizeGame, false);
 
 // Set the size of canvases once the page is loaded
 //window.addEventListener("load", resizeGame, false);
+
+});
