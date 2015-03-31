@@ -12,47 +12,105 @@
 	padding: 0;
 }
 
-.header{
-	background-color: $black;
-	height: 40px;
-	margin: 0 0 0 0;
-	position: relative;
-}
-
-.logo{	
+.main {
 	display: block;
-	float: left;
-	height: 40px;
-	max-width: 100%;
-	position: relative;
-	width: 40px;
-	z-index: 20000;
-    padding: 15px 0 0 20px;
-}
-
-.logoText{
-	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
-	font-size: $font-size-1;
-    -webkit-text-fill-color: $black;
-    -webkit-text-stroke-color: $blue;
-    -webkit-text-stroke-width: 1.5px;
-    margin: -4px 0 0 0;
-}
-
-.main{
-	height: 0;
-	min-height: 100%;
+	margin: 0;
 	padding-bottom: -80px;
 	position: relative;
+	top: 0;
 }
 
-.content{
-	background-color: $black;
-	min-height: 100%;
+.header {
+	display: block;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+}
+
+.logo {	
+	display: block;
+    margin: 20px 0 0 $leftborder;
+	max-width: 100%;
 	position: relative;
+	z-index: 20000;
 }
 
-.sidebar{
+.logoText {
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-2;
+    -webkit-text-fill-color: $black;
+    -webkit-text-stroke-color: $blue;
+    -webkit-text-stroke-width: 1.8px;
+
+    @for $i from 1 through 3 {
+    	&:nth-child(#{$i}) {
+     		margin-left: 10px * ($i - 1);
+  		}	
+	}
+}
+
+.redCircle {
+	display: block;
+    background-color: $red;
+    border-radius: 50%;
+    height: 20px;
+	left: 39.4px;
+	margin: 0;
+	position: absolute;
+	top: 43px;
+    width: 22px;
+}
+
+.content {
+	background-color: $black;
+	left: 0;
+	position: relative;
+	top: 0;
+}
+
+.intro {
+	color: $white;
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-2;
+	padding-left: 30%;
+	position: absolute;
+	padding-top: 30%;
+}
+
+.triangle {
+	border-left: 100px solid $yellow;
+  	border-top: 300px solid transparent;
+  	border-bottom: 300px solid transparent;
+  	background-repeat: no-repeat;
+  	display: block;
+  	float: left;
+  	position: relative;
+  	z-index: 300000;
+}
+
+.startBtn{
+    -moz-border-radius: 28;
+    -webkit-border-radius: 28;
+    background-color: $blue;
+    border-radius: 14px;
+    color: $black;
+    font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+    font-size: $font-size-3;
+    left: $leftborder;
+    padding: 18px 10px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 400px;
+    z-index: 300000;
+
+    &:hover{
+       background-color: $red;
+       color: $yellow;
+    }
+} 
+
+.sidebar {
 	float: left;
 	height: auto;
 	margin: 240px 40px 0 15px;
@@ -65,6 +123,7 @@
 	padding: 0 0 0 100px;
     color: $white;   
     font-size: $font-size-1;
+    visibility: hidden;
 }
 
 .score10{
@@ -72,35 +131,6 @@
 	font-size: $font-size-1;
 	padding: 0 0 0 70px;
 }
-
-.startBtn{
-    -moz-border-radius: 28;
-    -webkit-border-radius: 28;
-    background-image: -moz-linear-gradient(top, $blue, $darkerblue);
-    background-image: -ms-linear-gradient(top, $blue, $darkerblue);
-    background-image: -o-linear-gradient(top, $blue, $darkerblue);
-    background-image: -webkit-linear-gradient(top, $blue, $darkerblue);
-    background-image: linear-gradient(to bottom, $blue, $darkerblue);
-    background: $blue;
-    border-radius: 28px;
-    color: $white;
-    font-family: Arial;
-    font-size: 18px;
-    margin: 20px 0 0 70px;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-
-    &:hover{
-       background-image: -moz-linear-gradient(top, $lighterblue, $blue);
-       background-image: -ms-linear-gradient(top, $lighterblue, $blue);
-       background-image: -o-linear-gradient(top, $lighterblue, $blue);
-       background-image: -webkit-linear-gradient(top, $lighterblue, $blue);
-       background-image: linear-gradient(to bottom, $lighterblue, $blue);
-       background: $lighterblue;
-       color: darken($white, 40%);
-       text-decoration: none;
-    }
-} 
 
 
 .display{
@@ -131,13 +161,22 @@ footer[role="contentinfo"]{
 	background-color: $black;
 	clear: both;
 	display: block;
-	height: 80px;
-	margin-top: -80px;
 	position: relative;
+	top: -20px;
 }
 
 .footerText{
 	color: $blue;
-	font-size: $font-size-6;
-	padding: 10px 0 0 30px;
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-7;
+	padding: 10px 0 0 $leftborder;
+	
+	p {
+		line-height: 0;
+		
+		&:first-child {
+			color: $white;
+		}
+	}
+	
 }

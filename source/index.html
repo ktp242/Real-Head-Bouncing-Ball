@@ -10,7 +10,7 @@
 
     <meta name="description" content="">
 
-    <title>Real Head Bouncing Ball</title>
+    <title>Augment Bouncing Ball</title>
 
     <!-- iOS icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/apple-touch-icon-144x144-precomposed.png">
@@ -33,43 +33,50 @@
   </head>
 
   <body>
-
-    <header class="header">
-     <div class="logo">
-      <h1 class="logoText">AUGMENT</h1>
-      <h1 class="logoText">BOUNCING</h1>
-      <h1 class="logoText">BALL</h1>
-     </div>
-    </header>
-
-
+    
     <main class="main" role="main">
+      <header class="header">
+        <div class="logo">
+          <h1 class="logoText">AUGMENT</h1>
+          <h1 class="logoText">BOUNCING</h1>
+          <h1 class="logoText">BALL</h1>
+          <figure class="redCircle">
+        </div>
+      </header>
 
-    <div class="content">
+      <div class="content">
+        
+        <div class="intro">
+          <p>PLEASE ALLOW YOUR WEBCAM TO PLAY</p>
+        </div>
+        <div class="display">
+          <video id="camVideo" class="camVideo" width="720" height="540"></video>
+          <canvas class="mainCanvas" id="playground" style="display: block;"></canvas>
+        </div>
+        <div class="display">
+          <canvas class="mainCanvas" id="faceFrame" style="z-index: 100001; display: block;"></canvas>
+        </div>
+        <div class="display">
+          <canvas class="mainCanvas" id="ballCanvas" style="z-index: 100002; display: block;"></canvas>
+        </div>
+        
+        <div class="triangle"></div>
+        <div class="startBtn">start game</div>
 
-    <section class="display">
-      <video id="camVideo" class="camVideo" width="720" height="540"></video>
-      <canvas class="mainCanvas" id="playground" style="display: block;"></canvas>
-    </section>
-    <section class="display">
-      <canvas class="mainCanvas" id="faceFrame" style="z-index: 100001; display: block;"></canvas>
-    </section>
-    <section class="display">
-      <canvas class="mainCanvas" id="ballCanvas" style="z-index: 100002; display: block;"></canvas>
-    </section>
+        <div class="sidebar">
+          <div id="score" class="score"></div>
+        </div>
 
-    <section class="sidebar">
-      <div id="score" class="score"></div>
-    </section>
-
-    </div>
-
+      </div>
     </main>
 
     <footer role="contentinfo">
-      <p class="footerText">&copy; By Kang Peng 2015 at CP+B Boulder CO</p>
+      <div class="footerText">
+        <p>AUGMENT BOUNCING BALL</p>
+        <p>Design & Develop: Kang Peng</p>
+        <p>2015</p>
+      </div>
     </footer>
-
 
     <script src="js/apps/helpers/headtrackr.js"></script>
     <script data-main="js/main" src="js/libs/requirejs/require.js"></script>

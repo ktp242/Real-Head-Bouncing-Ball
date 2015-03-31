@@ -14,7 +14,7 @@ function resizeGame(){
   var displays  = document.getElementsByClassName('display');
 
   // The ratio of the canvases width to height is 2 / 1 
-  var canvasWToH = 2;
+  var canvasWToH = 1.6;
 
   // Get the ratio of current window
   var newWidth = window.innerWidth;
