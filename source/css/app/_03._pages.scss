@@ -66,27 +66,19 @@ footer[role="contentinfo"]{
 }
 
 .intro {
-	background-color: $yellow;
-	color: $white;
+	background-color: $black;
+	color: $yellow;
 	display: block;
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
-	font-size: $font-size-2;
+	font-size: $font-size-4;
 	min-height: 600px;
+	min-width: 1200px;
 	position: relative;
-	padding: 20% 0 0 60%;
+	padding: 284px 0 0 160px;
 
-// 	// &:after {
-// 	// 	border-left: 100px solid $yellow;
-// 	//   	border-top: 300px solid transparent;
-// 	//   	border-bottom: 300px solid transparent;
-// 	//   	background-repeat: no-repeat;
-// 	//   	content: " ";
-// 	//   	display: block;
-// 	//   	float: left;
-// 	//   	padding-left: 40%;
-// 	//   	position: relative;
-// 	//   	z-index: 300000;
-// 	// }
+	p {
+		line-height: 2px;
+	}
 }
 
 .logo {	
@@ -182,4 +174,16 @@ footer[role="contentinfo"]{
 
 .trackMsg{
 	visibility: hidden;
+}
+
+.triangle {
+	border-left: 100px solid $yellow;
+  	border-top: 300px solid transparent;
+  	border-bottom: 300px solid transparent;
+  	background-repeat: no-repeat;
+  	content: " ";
+  	display: block;
+  	float: left;
+  	position: relative;
+  	z-index: 300000;
 }
