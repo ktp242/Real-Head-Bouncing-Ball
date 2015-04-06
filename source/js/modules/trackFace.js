@@ -31,7 +31,7 @@ document.addEventListener("headtrackrStatus", function(event) {
 		}
 }, true);
 
-console.log("headtrackr");
+// console.log("headtrackr");
 window.tracker = headtrackr;
 
 // create the instance of headtrackr and start

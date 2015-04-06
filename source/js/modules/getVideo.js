@@ -23,7 +23,8 @@ if (navigator.getUserMedia) {
           // where the stream to be shown in the HTML
           var camVideo = $('#camVideo')[0];
           hasVideo = true;
-           // fill the stream into video tag
+          $(document).trigger('enterGame'); 
+          // fill the stream into video tag
           camVideo.src = window.URL.createObjectURL(stream) || stream;
           camVideo.play(); }, 
             
@@ -69,7 +70,7 @@ window.addEventListener('resizeGame', function(changeSize){
 function drawScreen(){
 
   if(!hasVideo)
-  console.log('video is not ready'); 
+  console.log('video is not ready');
 
   // select the main canvas
   playground = $('#playground')[0];
