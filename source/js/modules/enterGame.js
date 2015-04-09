@@ -8,7 +8,6 @@ define([
       $('.startBtn').append('Start Game');
       $('.intro').html('<p>HIT THE START BUTTON WITH YOUR HEAD.</p>');
       $('.intro').addClass('introChange');
-      console.log("get btn");
   });
 
 });

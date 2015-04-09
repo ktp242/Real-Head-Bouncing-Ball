@@ -13,9 +13,11 @@
 }
 
 .camVideo{
+	height: 600px;
 	left: 0;
 	position: absolute;
 	top: 0;
+	width: 1200px;
 	visibility: hidden;
 }
 
@@ -28,9 +30,13 @@
 }
 
 .display{
-	left: 50%;
+	height: 100%;
+	max-height: 600px;
+	max-width: 1200px;
+	min-height: 600px;
+	min-width: 1200px;
 	position: absolute;
-	top: 50%;
+	width: 100%;
 }
 
 footer[role="contentinfo"]{
@@ -66,15 +72,15 @@ footer[role="contentinfo"]{
 }
 
 .intro {
-	background-color: $black;
 	color: $yellow;
 	display: block;
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
 	font-size: $font-size-4;
-	min-height: 600px;
+	left: 120px;
 	min-width: 1200px;
-	position: relative;
-	padding: 284px 0 0 160px;
+	position: absolute;
+	top: 286px;
+	z-index: 200001;
 
 	p {
 		line-height: 2px;
@@ -82,7 +88,8 @@ footer[role="contentinfo"]{
 }
 
 .introChange {
-	padding: 430px 0 0 272px;
+	left: 272px;
+	top: 430px;
 }
 
 .logo {	
@@ -110,7 +117,7 @@ footer[role="contentinfo"]{
 .main {
 	display: block;
 	margin: 0;
-	padding-bottom: -80px;
+	overflow: hidden;
 	position: relative;
 	top: 0;
 }

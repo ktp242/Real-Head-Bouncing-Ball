@@ -41,9 +41,9 @@ define([
   });
 
 
-  // var ballCanvasCtx = $('#ballCanvas')[0].getContext('2d');
-  // var w = $('#ballCanvas').width();
-  // var h = $('#ballCanvas').height();
+  var ballCanvasCtx = $('#ballCanvas')[0].getContext('2d');
+  var w = $('#ballCanvas').width();
+  var h = $('#ballCanvas').height();
 
 
   function clearCanvas(){

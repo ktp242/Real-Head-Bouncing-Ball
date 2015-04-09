@@ -16,7 +16,7 @@ require.config({
     lodash: 'libs/lodash/lodash',
     
     // Customized Modules
-    resizeCanvas: 'modules/resizeCanvas',
+    //resizeCanvas: 'modules/resizeCanvas',
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
     ball: 'modules/ball',
@@ -67,7 +67,7 @@ require([
   'lodash',
   'apps/master/app',
   'headtrackr',
-  'resizeCanvas',
+  //'resizeCanvas',
   'getVideo',
   'trackFace',
   'ball',
