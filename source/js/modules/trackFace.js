@@ -31,7 +31,7 @@ document.addEventListener("headtrackrStatus", function(event) {
 		}
 }, true);
 
-console.log("headtrackr");
+// console.log("headtrackr");
 window.tracker = headtrackr;
 
 // create the instance of headtrackr and start
@@ -45,17 +45,17 @@ htracker.start();
 // create the rectangle following the head
 var faceFrame = $('#faceFrame')[0];
 
-// listen to the change of the window and get the new size of the canvases
-$(document).on('resize', function(event, changeSize){
+// // listen to the change of the window and get the new size of the canvases
+// $(document).on('resize', function(event, changeSize){
 
-  w = changeSize.newWidth;
-  h = changeSize.newHeight; 
+//   w = changeSize.newWidth;
+//   h = changeSize.newHeight; 
   
-  // Set the drawing on all the canvases fit the dimensions
-  faceFrame.width = w;
-  faceFrame.height = h;
+//   // Set the drawing on all the canvases fit the dimensions
+//   faceFrame.width = w;
+//   faceFrame.height = h;
 
-});
+// });
 
 var faceFrameCtx = faceFrame.getContext('2d');
 document.addEventListener("facetrackingEvent", function( event ) {

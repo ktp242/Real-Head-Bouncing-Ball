@@ -12,47 +12,156 @@
 	padding: 0;
 }
 
-.header{
-	background-color: $black;
-	height: 40px;
-	margin: 0 0 0 0;
-	position: relative;
+.camVideo{
+	height: 600px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1200px;
+	visibility: hidden;
 }
 
-.logo{	
+.content {
+	background-color: $black;
+	left: 0;
+	min-height: 600px;
+	position: relative;
+	top: 0;
+}
+
+.display{
+	height: 100%;
+	max-height: 600px;
+	max-width: 1200px;
+	min-height: 600px;
+	min-width: 1200px;
+	position: absolute;
+	width: 100%;
+}
+
+footer[role="contentinfo"]{
+	background-color: $black;
+	clear: both;
 	display: block;
-	float: left;
-	height: 40px;
+	position: relative;
+	margin-top: 0;
+}
+
+.footerText{
+	color: $blue;
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-7;
+	padding: 28px 0 0 $leftborder;
+	
+	p {
+		line-height: 0;
+		
+		&:first-child {
+			color: $white;
+		}
+	}
+	
+}
+
+.header {
+	display: block;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+}
+
+.intro {
+	color: $yellow;
+	display: block;
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-4;
+	left: 120px;
+	min-width: 1200px;
+	position: absolute;
+	top: 286px;
+	z-index: 200001;
+
+	p {
+		line-height: 2px;
+	}
+}
+
+.introChange {
+	left: 272px;
+	top: 430px;
+}
+
+.logo {	
+	display: block;
+    margin: 20px 0 0 $leftborder;
 	max-width: 100%;
 	position: relative;
-	width: 40px;
 	z-index: 20000;
-    padding: 15px 0 0 20px;
 }
 
-.logoText{
+.logoText {
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
-	font-size: $font-size-1;
+	font-size: $font-size-2;
     -webkit-text-fill-color: $black;
     -webkit-text-stroke-color: $blue;
-    -webkit-text-stroke-width: 1.5px;
-    margin: -4px 0 0 0;
+    -webkit-text-stroke-width: 1.8px;
+
+    @for $i from 1 through 3 {
+    	&:nth-child(#{$i}) {
+     		margin-left: 10px * ($i - 1);
+  		}	
+	}
 }
 
-.main{
-	height: 0;
-	min-height: 100%;
-	padding-bottom: -80px;
+.main {
+	display: block;
+	margin: 0;
+	overflow: hidden;
 	position: relative;
+	top: 0;
 }
 
-.content{
-	background-color: $black;
-	min-height: 100%;
-	position: relative;
+.mainCanvas{
+	height: 100%;
+	width: 100%;
 }
 
-.sidebar{
+.redCircle {
+	display: block;
+    background-color: $red;
+    border-radius: 50%;
+    height: 20px;
+	left: 39.4px;
+	margin: 0;
+	position: absolute;
+	top: 43px;
+    width: 22px;
+}
+
+
+.startBtn {
+    -moz-border-radius: 28;
+    -webkit-border-radius: 28;
+    background-color: $blue;
+    border-radius: 14px;
+    color: $black;
+    font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+    font-size: $font-size-3;
+    left: $leftborder;
+    padding: 18px 10px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 400px;
+    z-index: 300000;
+
+    &:hover{
+       background-color: $red;
+       color: $yellow;
+    }
+} 
+
+.sidebar {
 	float: left;
 	height: auto;
 	margin: 240px 40px 0 15px;
@@ -65,6 +174,7 @@
 	padding: 0 0 0 100px;
     color: $white;   
     font-size: $font-size-1;
+    visibility: hidden;
 }
 
 .score10{
@@ -73,71 +183,18 @@
 	padding: 0 0 0 70px;
 }
 
-.startBtn{
-    -moz-border-radius: 28;
-    -webkit-border-radius: 28;
-    background-image: -moz-linear-gradient(top, $blue, $darkerblue);
-    background-image: -ms-linear-gradient(top, $blue, $darkerblue);
-    background-image: -o-linear-gradient(top, $blue, $darkerblue);
-    background-image: -webkit-linear-gradient(top, $blue, $darkerblue);
-    background-image: linear-gradient(to bottom, $blue, $darkerblue);
-    background: $blue;
-    border-radius: 28px;
-    color: $white;
-    font-family: Arial;
-    font-size: 18px;
-    margin: 20px 0 0 70px;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-
-    &:hover{
-       background-image: -moz-linear-gradient(top, $lighterblue, $blue);
-       background-image: -ms-linear-gradient(top, $lighterblue, $blue);
-       background-image: -o-linear-gradient(top, $lighterblue, $blue);
-       background-image: -webkit-linear-gradient(top, $lighterblue, $blue);
-       background-image: linear-gradient(to bottom, $lighterblue, $blue);
-       background: $lighterblue;
-       color: darken($white, 40%);
-       text-decoration: none;
-    }
-} 
-
-
-.display{
-	left: 50%;
-	position: absolute;
-	top: 50%;
-}
-
-.camVideo{
-	left: 0;
-	position: absolute;
-	top: 0;
-	visibility: hidden;
-}
-
-
-.mainCanvas{
-	height: 100%;
-	width: 100%;
-}
-
 .trackMsg{
 	visibility: hidden;
 }
 
-
-footer[role="contentinfo"]{
-	background-color: $black;
-	clear: both;
-	display: block;
-	height: 80px;
-	margin-top: -80px;
-	position: relative;
-}
-
-.footerText{
-	color: $blue;
-	font-size: $font-size-6;
-	padding: 10px 0 0 30px;
+.triangle {
+	border-left: 100px solid $yellow;
+  	border-top: 300px solid transparent;
+  	border-bottom: 300px solid transparent;
+  	background-repeat: no-repeat;
+  	content: " ";
+  	display: block;
+  	float: left;
+  	position: relative;
+  	z-index: 300000;
 }
