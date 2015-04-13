@@ -12,6 +12,49 @@
 	padding: 0;
 }
 
+/********************************************************** Button */
+
+.Btn {
+	-moz-border-radius: 28;
+    -webkit-border-radius: 28;
+    border-radius: 14px;
+    font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+    font-size: $font-size-3;
+    left: $leftborder;
+    padding: 18px 10px;
+	position: absolute;
+    text-transform: uppercase;
+}
+
+.resetBtn {
+	background-color: $red;
+	color: $black;
+	font-size: $font-size-5;
+    position: absolute;
+    text-transform: uppercase;
+    top: 140px;
+    z-index: 300000;
+
+     &:hover{
+       background-color: $yellow;
+       color: $blue;
+    }
+}
+
+.startBtn {
+    background-color: $blue;
+    color: $black;
+    top: 400px;
+    z-index: 300000;
+
+    &:hover{
+       background-color: $red;
+       color: $yellow;
+    }
+} 
+
+/***********************************************************/
+
 .camVideo{
 	height: 600px;
 	left: 0;
@@ -138,28 +181,6 @@ footer[role="contentinfo"]{
 	top: 43px;
     width: 22px;
 }
-
-
-.startBtn {
-    -moz-border-radius: 28;
-    -webkit-border-radius: 28;
-    background-color: $blue;
-    border-radius: 14px;
-    color: $black;
-    font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
-    font-size: $font-size-3;
-    left: $leftborder;
-    padding: 18px 10px;
-    position: absolute;
-    text-transform: uppercase;
-    top: 400px;
-    z-index: 300000;
-
-    &:hover{
-       background-color: $red;
-       color: $yellow;
-    }
-} 
 
 .sidebar {
 	float: left;

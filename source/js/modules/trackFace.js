@@ -39,8 +39,14 @@ var htracker = new headtrackr.Tracker({ui : false, headPosition : false, calcAng
 
 // pass these paramters we got in getVideo.js
 htracker.init(camVideo, playground);
-htracker.start();
 
+$(document).on('gameStart', function(){
+	htracker.start();
+});
+
+$(document).on('reset', function(){
+	htracker.stop();
+});
 
 // create the rectangle following the head
 var faceFrame = $('#faceFrame')[0];

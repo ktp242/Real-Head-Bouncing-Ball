@@ -19,7 +19,7 @@ require.config({
     //resizeCanvas: 'modules/resizeCanvas',
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
-    ball: 'modules/ball',
+    playGame: 'modules/playGame',
     score: 'modules/score',
     enterGame: 'modules/enterGame',
 
@@ -70,7 +70,7 @@ require([
   //'resizeCanvas',
   'getVideo',
   'trackFace',
-  'ball',
+  'playGame',
   'score',
   'enterGame'
 ], function($, _, App) {
