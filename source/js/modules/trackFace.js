@@ -45,6 +45,7 @@ $(document).on('gameStart', function(){
 });
 
 $(document).on('reset', function(){
+	faceFrameCtx.clearRect(0,0,faceFrame.width,faceFrame.height);
 	htracker.stop();
 });
 
