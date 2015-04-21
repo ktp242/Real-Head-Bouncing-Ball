@@ -29,7 +29,8 @@ module.exports = function(grunt) {
           src: [
             'robots.txt',
             'favicon.ico',
-            'css/fonts/**/*'
+            'css/fonts/**/*',
+            'source/js/libs/headtrackr/headtrackr.js'
           ],
           dest: config.dist
         }
