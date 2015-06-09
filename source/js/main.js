@@ -15,10 +15,13 @@ require.config({
     jquery: 'libs/jquery/jquery',
     lodash: 'libs/lodash/lodash',
     
+    // Customized Modules
+    //resizeCanvas: 'modules/resizeCanvas',
     getVideo: 'modules/getVideo',
     trackFace: 'modules/trackFace',
-    ball: 'modules/ball',
+    playGame: 'modules/playGame',
     score: 'modules/score',
+    enterGame: 'modules/enterGame',
 
     // Helper Modules
     helpers: 'apps/helpers',
@@ -47,6 +50,11 @@ require.config({
     getVideo: {
       includes: ['jquery'],
       exports: 'getVideo'
+    },
+
+    enterGame: {
+      includes: ['jquery'],
+      exports: 'enterGame'
     }
   }
 }); // end require.config
@@ -59,10 +67,12 @@ require([
   'lodash',
   'apps/master/app',
   'headtrackr',
+  //'resizeCanvas',
   'getVideo',
   'trackFace',
-  'ball',
+  'playGame',
   'score',
+  'enterGame'
 ], function($, _, App) {
   'use strict';
 

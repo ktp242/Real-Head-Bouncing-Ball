@@ -33,7 +33,7 @@ document.addEventListener("headtrackrStatus", function(event) {
 		}
 }, true);
 
-console.log("headtrackr");
+// console.log("headtrackr");
 window.tracker = headtrackr;
 
 // create the instance of headtrackr and start
@@ -41,13 +41,35 @@ var htracker = new headtrackr.Tracker({ui : false, headPosition : false, calcAng
 
 // pass these paramters we got in getVideo.js
 htracker.init(camVideo, playground);
-htracker.start();
+
+$(document).on('gameStart', function(){
+	htracker.start();
+});
+
+$(document).on('reset', function(){
+	faceFrameCtx.clearRect(0,0,faceFrame.width,faceFrame.height);
+	htracker.stop();
+});
 
 // create the rectangle following the head
-var faceFrameCtx = $('#faceFrame')[0].getContext('2d');
+var faceFrame = $('#faceFrame')[0];
+
+// // listen to the change of the window and get the new size of the canvases
+// $(document).on('resize', function(event, changeSize){
+
+//   w = changeSize.newWidth;
+//   h = changeSize.newHeight; 
+  
+//   // Set the drawing on all the canvases fit the dimensions
+//   faceFrame.width = w;
+//   faceFrame.height = h;
+
+// });
+
+var faceFrameCtx = faceFrame.getContext('2d');
 document.addEventListener("facetrackingEvent", function( event ) {
 				// clear canvas
-				faceFrameCtx.clearRect(0,0,960,480);
+				faceFrameCtx.clearRect(0,0,faceFrame.width,faceFrame.height);
 				// once we have stable tracking, draw rectangle
 				if (event.detection == "CS") {
 					faceFrameCtx.translate(event.x, event.y);

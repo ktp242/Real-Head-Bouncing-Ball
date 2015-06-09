@@ -1,6 +1,9 @@
 // * This module is to create a ball on index.html and give the ball functions to interact with
 // * audience face.
 // * created by Kang Peng 20150211
+// *
+// * Change this module to the main game execution. It inlucdes drawing the ball, reset, and game 
+// * over.
 
 define([
   'jquery'
@@ -18,6 +21,8 @@ define([
       faceW,
       faceH,
       faceAngle,
+
+      requestID,
 
       redColor = "#ff0000",
       yellowColor = '#ffff00',
@@ -151,23 +156,36 @@ define([
     y = y + dy;
     
     // Set animation function call back
-    requestAnimationFrame(drawBall);
+    requestID = requestAnimationFrame(drawBall);
   }
+
+  // Start the game
+  function startBall(){
+    setTimeout(function(){
+    requestAnimationFrame(drawBall);
+    }, 3000);
+  }
+
+  $(document).on('gameStart', function(){
+    startBall();
+  });
+
+  $(document).on('reset', function(){
+    cancelAnimationFrame(requestID);
+    clearCanvas();
+    x = 380; 
+    y = 40;
+    console.log('reset done');
+  });
 
   // Start the animation
   $('#camVideo').on('play', function(){
 
-      // When video is available, the button shows for the next step
-      var startGame = $('.sidebar').append('<button class="startBtn">Click to Start</button>');
+      // // When video is available, the button shows for the next step
+      // var startGame = $('.sidebar').append('<button class="startBtn">Click to Start</button>');
 
-      // Click the button and wait 3 seconds to  start
-      $('.startBtn').on('click', function(){
-          setTimeout(function(){
-              requestAnimationFrame(drawBall);
-          }, 3000);
-                
-      });
   });
+
 });
 
 

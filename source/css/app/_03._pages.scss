@@ -7,118 +7,215 @@
 
 /********************************************************** Layout */
 
-.header{
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/********************************************************** Button */
+
+.Btn {
+	-moz-border-radius: 28;
+    -webkit-border-radius: 28;
+    border-radius: 14px;
+    font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+    font-size: $font-size-3;
+    left: $leftborder;
+    padding: 18px 10px;
+	position: absolute;
+    text-transform: uppercase;
+}
+
+.resetBtn {
+	background-color: $red;
+	color: $black;
+	font-size: $font-size-5;
+    position: absolute;
+    text-transform: uppercase;
+    top: 140px;
+    z-index: 300000;
+
+     &:hover{
+       background-color: $yellow;
+       color: $blue;
+    }
+}
+
+.startBtn {
+    background-color: $blue;
+    color: $black;
+    top: 400px;
+    z-index: 300000;
+
+    &:hover{
+       background-color: $red;
+       color: $yellow;
+    }
+} 
+
+/***********************************************************/
+
+.camVideo{
+	height: 600px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1200px;
+	visibility: hidden;
+}
+
+.content {
+	background-color: $black;
+	left: 0;
+	min-height: 600px;
 	position: relative;
-	height: 40px;
-	margin: 0 0 0 0;
-	background-color: yellow;
+	top: 0;
 }
 
-.logo{	
-	max-width: 100%;
-	width: 40px;
-	height: 40px;
-	float: left;
-    padding: 15px 0 0 20px;
-	position: relative;
-	display: block;
-}
-
-.logoText{
-	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
-	font-size: $font-size-1;
-    -webkit-text-fill-color: $black;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: $blue;
-    margin: -4px 0 0 0;
-}
-
-.main{
+.display{
+	height: 100%;
+	max-height: 600px;
+	max-width: 1200px;
+	min-height: 600px;
+	min-width: 1200px;
+	position: absolute;
 	width: 100%;
-	height: 540px;
-	position: relative;
 }
 
-.sidebar{
-	width: 200px;
-	height: auto;
+footer[role="contentinfo"]{
+	background-color: $black;
+	clear: both;
+	display: block;
+	position: relative;
+	margin-top: 0;
+}
+
+.footerText{
+	color: $blue;
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-7;
+	padding: 28px 0 0 $leftborder;
+	
+	p {
+		line-height: 0;
+		
+		&:first-child {
+			color: $white;
+		}
+	}
+	
+}
+
+.header {
+	display: block;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+}
+
+.intro {
+	color: $yellow;
+	display: block;
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-4;
+	left: 120px;
+	min-width: 1200px;
+	position: absolute;
+	top: 286px;
+	z-index: 200001;
+
+	p {
+		line-height: 2px;
+	}
+}
+
+.introChange {
+	left: 272px;
+	top: 430px;
+}
+
+.logo {	
+	display: block;
+    margin: 20px 0 0 $leftborder;
+	max-width: 100%;
+	position: relative;
+	z-index: 20000;
+}
+
+.logoText {
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-2;
+    -webkit-text-fill-color: $black;
+    -webkit-text-stroke-color: $blue;
+    -webkit-text-stroke-width: 1.8px;
+
+    @for $i from 1 through 3 {
+    	&:nth-child(#{$i}) {
+     		margin-left: 10px * ($i - 1);
+  		}	
+	}
+}
+
+.main {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	top: 0;
+}
+
+.mainCanvas{
+	height: 100%;
+	width: 100%;
+}
+
+.redCircle {
+	display: block;
+    background-color: $red;
+    border-radius: 50%;
+    height: 20px;
+	left: 39.4px;
+	margin: 0;
+	position: absolute;
+	top: 43px;
+    width: 22px;
+}
+
+.sidebar {
 	float: left;
+	height: auto;
 	margin: 240px 40px 0 15px;
+	position: relative;
+	width: 200px;
+	z-index: 100003;
 }
 
 .score {
 	padding: 0 0 0 100px;
+    color: $white;   
     font-size: $font-size-1;
-    color: $white;    
+    visibility: hidden;
 }
 
 .score10{
-	padding: 0 0 0 70px;
-	font-size: $font-size-1;
 	color: $white;    
-}
-
-.startBtn{
-    margin: 20px 0 0 70px;
-
-    background: $blue;
-    background-image: -webkit-linear-gradient(top, $blue, $darkerblue);
-    background-image: -moz-linear-gradient(top, $blue, $darkerblue);
-    background-image: -ms-linear-gradient(top, $blue, $darkerblue);
-    background-image: -o-linear-gradient(top, $blue, $darkerblue);
-    background-image: linear-gradient(to bottom, $blue, $darkerblue);
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-    font-family: Arial;
-    color: $white;
-    font-size: 18px;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-
-    &:hover{
-       background: $lighterblue;
-       background-image: -webkit-linear-gradient(top, $lighterblue, $blue);
-       background-image: -moz-linear-gradient(top, $lighterblue, $blue);
-       background-image: -ms-linear-gradient(top, $lighterblue, $blue);
-       background-image: -o-linear-gradient(top, $lighterblue, $blue);
-       background-image: linear-gradient(to bottom, $lighterblue, $blue);
-       text-decoration: none;
-       color: darken($white, 40%);
-    }
-} 
-
-
-.display{
-}
-
-.camVideo{
-	position: absolute;
-	left: 24%;
-	top: 5%;
-	visibility: hidden;
-}
-
-
-.mainCanvas{
-	position: absolute;
-	left: 24%;
-	top: 1%;
+	font-size: $font-size-1;
+	padding: 0 0 0 70px;
 }
 
 .trackMsg{
 	visibility: hidden;
 }
 
-
-footer[role="contentinfo"]{
-	margin-top: 60px;
-	height: 60px;
-	position: relative;
-}
-
-.footerText{
-	padding-left: 30px;
-	color: $white;
-	font-size: $font-size-6;
+.triangle {
+	border-left: 100px solid $yellow;
+  	border-top: 300px solid transparent;
+  	border-bottom: 300px solid transparent;
+  	background-repeat: no-repeat;
+  	content: " ";
+  	display: block;
+  	float: left;
+  	position: relative;
+  	z-index: 300000;
 }

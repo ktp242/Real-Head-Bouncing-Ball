@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         ]
       },
       files: {
-        'dist/index.html': 'dist/index.html'
+        //'dist/index.html': 'dist/index.html'
       }
     }
   };
