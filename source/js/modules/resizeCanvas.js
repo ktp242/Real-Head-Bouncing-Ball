@@ -3,7 +3,6 @@
 // * http://www.html5rocks.com/en/tutorials/casestudies/gopherwoord-studios-resizing-html5-games/
 // * created by Kang Peng 20150309
 
-
 define([
   'jquery'
   ], function($) {

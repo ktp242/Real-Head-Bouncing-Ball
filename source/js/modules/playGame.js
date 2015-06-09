@@ -31,7 +31,7 @@ define([
       level = 1,
       levelCheck,
 
-      speed;
+      speed = 1.2;
 
 
   // Listen to face track event, and get the coordinates of upper left point, 
@@ -72,7 +72,8 @@ define([
     hitNumber ++;
     $(document).trigger('hitBall', { passedScore : hitNumber });
     
-    levelCheck = Math.floor(hitNumber / 10) + 1;
+    levelCheck = Math.floor(hitNumber / 5) + 1;
+    console.log(level + " , " + speed);
 
     if (levelCheck != level) {
        speedup();
@@ -86,7 +87,8 @@ define([
 
 
   function speedup(){
-    speed = Math.floor(hitNumber / 10) + 1;
+    // speed = Math.floor(hitNumber / 10) + 1;
+    speed = speed * 1.2;
     dy = dy * (speed);
     dx = dx * (speed);
   }
@@ -101,68 +103,72 @@ define([
 	  circle(x, y, radius);
 
     // Make the ball only to bounce inside the frame	
-    if (x + dx + radius * 2 > w - radius * 2 || x + dx  < radius)
+    if (x + dx + radius  > w || x + dx  < radius)
       dx = -dx;  
-    if (y + dy + radius * 1.6 > h || y + dy  < radius)
+    if (y + dy  < radius)
       dy = -dy;
 
+    if (y + dy + radius > h) {
+      $(document).trigger('lose');
+    }
 
-    // Make the ball to bounce above player's head
-    // If the ball is above the player's head
-    if(x > faceX - 20 && x < faceX + faceW + 20){
-     
-     // If the ball's y-coordinate is greater than the upper left point of the face object's
-     if (y + dy + radius * 4 > faceY && x < faceX + (faceW + 20)/2){
-     
-      // IF the ball is dropping 
-      if (dy > 0 && dx > 0){
-        hitBall();
-        dy = -dy;
-        dx = -dx;
-        
-      // prevent accidently hit the ball by the player's chin
-      }else if (dy > 0 && dx < 0){ 
-        hitBall();
-        dy = -dy;
-        dx = dx;
-        
-      }else if (dy < 0){
-           dy = dy;
-      } 
-      
-     } else if (y + dy + radius * 4 > faceY && x > faceX + (faceW + 20)/2){
-      if (dy > 0 && dx > 0){
-        hitBall();
-        dy = -dy;
-        dx = dx;
+
+      // Make the ball to bounce above player's head
+      // If the ball is above the player's head
+      if(x > faceX - 20 && x < faceX + faceW + 20){
        
-      }else if (dy > 0 && dx < 0){
-        hitBall();
-        dy = -dy;
-        dx = -dx;
+       // If the ball's y-coordinate is greater than the upper left point of the face object's
+       if (y + dy + radius * 4 > faceY && x < faceX + (faceW + 20)/2){
+       
+        // IF the ball is dropping 
+        if (dy > 0 && dx > 0){
+          hitBall();
+          dy = -dy;
+          dx = -dx;
+          
+        // prevent accidently hit the ball by the player's chin
+        }else if (dy > 0 && dx < 0){ 
+          hitBall();
+          dy = -dy;
+          dx = dx;
+          
+        }else if (dy < 0){
+             dy = dy;
+        } 
+        
+       } else if (y + dy + radius * 4 > faceY && x > faceX + (faceW + 20)/2){
+        if (dy > 0 && dx > 0){
+          hitBall();
+          dy = -dy;
+          dx = dx;
+         
+        }else if (dy > 0 && dx < 0){
+          hitBall();
+          dy = -dy;
+          dx = -dx;
 
 
-      }else if (dy < 0){
-        dy = dy;
+        }else if (dy < 0){
+          dy = dy;
+        }
       }
-    }
-    
-    }else{
-     dy = dy;
-    }
-    
-    // Set the speed of the ball
-	  x = x + dx;
-    y = y + dy;
-    
-    // Set animation function call back
-    requestID = requestAnimationFrame(drawBall);
+      
+      }else{
+       dy = dy;
+      }
+      
+      // Set the speed of the ball
+      x = x + dx;
+      y = y + dy;
+      
+      // Set animation function call back
+      requestAnimationFrame(drawBall);
   }
 
   // Start the game
   function startBall(){
     setTimeout(function(){
-    requestAnimationFrame(drawBall);
+      requestAnimationFrame(drawBall);
     }, 3000);
   }
 
@@ -178,6 +184,17 @@ define([
     console.log('reset done');
   });
 
+  $(document).on('lose', function(){
+    cancelAnimationFrame(requestID);
+    clearCanvas();
+    x = -20; 
+    y = -20;
+    dx = 0;
+    dy = 0 ;
+    console.log('you lost');
+    $('.logo').append('<h1 class="lostText">You Lost!</h1>');
+  });
+
   // Start the animation
   $('#camVideo').on('play', function(){
 
@@ -187,8 +204,3 @@ define([
   });
 
 });
-
-
-
-
-

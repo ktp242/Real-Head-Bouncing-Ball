@@ -32,7 +32,22 @@
 	font-size: $font-size-5;
     position: absolute;
     text-transform: uppercase;
-    top: 140px;
+    top: 506px;
+    z-index: 300000;
+
+     &:hover{
+       background-color: $yellow;
+       color: $blue;
+    }
+}
+
+.reTrackBtn {
+	background-color: $red;
+	color: $black;
+	font-size: $font-size-6;
+    position: absolute;
+    text-transform: uppercase;
+    top: 506px;
     z-index: 300000;
 
      &:hover{
@@ -44,7 +59,8 @@
 .startBtn {
     background-color: $blue;
     color: $black;
-    top: 400px;
+    left: 500px;
+    top: 350px;
     z-index: 300000;
 
     &:hover{
@@ -66,7 +82,7 @@
 
 .content {
 	background-color: $black;
-	left: 0;
+	left: 72px;
 	min-height: 600px;
 	position: relative;
 	top: 0;
@@ -94,7 +110,7 @@ footer[role="contentinfo"]{
 	color: $blue;
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
 	font-size: $font-size-7;
-	padding: 28px 0 0 $leftborder;
+	padding: 28px 0 0 72px;
 	
 	p {
 		line-height: 0;
@@ -108,15 +124,15 @@ footer[role="contentinfo"]{
 
 .header {
 	display: block;
-	left: 0;
+	left: 240px;
 	margin: 0;
 	position: absolute;
-	top: 0;
+	top: 260px;
 }
 
 .intro {
 	color: $yellow;
-	display: block;
+	display: none;
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
 	font-size: $font-size-4;
 	left: 120px;
@@ -145,7 +161,7 @@ footer[role="contentinfo"]{
 
 .logoText {
 	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
-	font-size: $font-size-2;
+	font-size: $font-size-1;
     -webkit-text-fill-color: $black;
     -webkit-text-stroke-color: $blue;
     -webkit-text-stroke-width: 1.8px;
@@ -155,6 +171,16 @@ footer[role="contentinfo"]{
      		margin-left: 10px * ($i - 1);
   		}	
 	}
+}
+
+.lostText {
+	font-family: 'Audiowide', cursive, Helvetica, Arial, sans-serif;
+	font-size: $font-size-1;
+    -webkit-text-fill-color: $black;
+    -webkit-text-stroke-color: $blue;
+    -webkit-text-stroke-width: 1.8px;
+    margin-left: 270px;
+    width: 300px;
 }
 
 .main {
@@ -174,12 +200,12 @@ footer[role="contentinfo"]{
 	display: block;
     background-color: $red;
     border-radius: 50%;
-    height: 20px;
-	left: 39.4px;
+    height: 37px;
+	left: 359px;
 	margin: 0;
 	position: absolute;
-	top: 43px;
-    width: 22px;
+	top: 9px;
+    width: 35px;
 }
 
 .sidebar {
@@ -192,16 +218,30 @@ footer[role="contentinfo"]{
 }
 
 .score {
-	padding: 0 0 0 100px;
     color: $white;   
     font-size: $font-size-1;
-    visibility: hidden;
+	padding: 0 0 0 100px;
+	position: absolute;
+	top: 466px;
+	left: 982px;
 }
 
 .score10{
 	color: $white;    
 	font-size: $font-size-1;
 	padding: 0 0 0 70px;
+	position: absolute;
+	top: 466px;
+	left: 982px;
+}
+
+.scoreTitle{
+	color: $white;    
+	font-size: $font-size-2;
+	padding: 0 0 0 70px;
+	position: absolute;
+	top: 440px;
+	left: 979px;
 }
 
 .trackMsg{

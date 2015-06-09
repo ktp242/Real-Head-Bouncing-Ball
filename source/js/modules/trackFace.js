@@ -1,7 +1,5 @@
 // This module is to track the user's face on the video
 // created by Kang Peng 20150206
-
-// jshint ignore: start
 define([
 	'headtrackr',
 	'jquery'
@@ -42,13 +40,20 @@ var htracker = new headtrackr.Tracker({ui : false, headPosition : false, calcAng
 // pass these paramters we got in getVideo.js
 htracker.init(camVideo, playground);
 
-$(document).on('gameStart', function(){
+$(document).on('enterGame', function(){
 	htracker.start();
 });
 
 $(document).on('reset', function(){
 	faceFrameCtx.clearRect(0,0,faceFrame.width,faceFrame.height);
 	htracker.stop();
+});
+
+$(document).on('reTrack', function(){
+	htracker.stop();  
+    console.log('face track re start');
+    //faceFrameCtx.clearRect(0,0,faceFrame.width,faceFrame.height);
+    htracker.start();
 });
 
 // create the rectangle following the head
