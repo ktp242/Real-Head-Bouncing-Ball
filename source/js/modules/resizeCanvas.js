@@ -3,7 +3,7 @@
 // * http://www.html5rocks.com/en/tutorials/casestudies/gopherwoord-studios-resizing-html5-games/
 // * created by Kang Peng 20150309
 
-
+// jshint ignore: start
 function resizeGame(){
 
   // Grab the parent elements of each of the canvases

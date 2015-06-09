@@ -2,7 +2,7 @@
 // * audience face.
 // * created by Kang Peng 20150211
 
-
+// jshint ignore: start
 define([
   'jquery'
   ], function($) {

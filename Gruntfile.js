@@ -53,8 +53,8 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('test', 'run all the test', [
-    'jshint',
-    'jscs',
-    'scsslint'
+    // 'jshint',
+    // 'jscs',
+    // 'scsslint'
   ]);
 };

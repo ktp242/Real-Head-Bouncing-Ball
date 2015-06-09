@@ -1,5 +1,7 @@
 // This module is to track the user's face on the video
 // created by Kang Peng 20150206
+
+// jshint ignore: start
 define([
 	'headtrackr',
 	'jquery'

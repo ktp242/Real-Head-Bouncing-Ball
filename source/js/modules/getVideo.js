@@ -1,6 +1,7 @@
 // This module is to get video from the web cam, flip it horizontal, and show it on the screen
 // created by Kang Peng 20150206
 
+// jshint ignore: start
 define([
   'jquery'
   ], function($) {
