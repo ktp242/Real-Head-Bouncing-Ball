@@ -17,11 +17,13 @@ require.config({
     
     // Customized Modules
     //resizeCanvas: 'modules/resizeCanvas',
-    getVideo: 'modules/getVideo',
-    trackFace: 'modules/trackFace',
-    playGame: 'modules/playGame',
-    score: 'modules/score',
-    enterGame: 'modules/enterGame',
+    // getVideo: 'modules/getVideo',
+    // trackFace: 'modules/trackFace',
+    // playGame: 'modules/playGame',
+    // score: 'modules/score',
+    // enterGame: 'modules/enterGame',
+
+    videoRenderCtrl: 'modules/ctrl/videoRenderCtrl',
 
     // Helper Modules
     helpers: 'apps/helpers',
@@ -42,20 +44,20 @@ require.config({
       exports: 'headtrackr'
     },
 
-    trackFace: {
-      includes: ['headtrackr'],
-      exports: 'trackFace'
-    },
+    // trackFace: {
+    //   includes: ['headtrackr'],
+    //   exports: 'trackFace'
+    // },
 
-    getVideo: {
-      includes: ['jquery'],
-      exports: 'getVideo'
-    },
+    // getVideo: {
+    //   includes: ['jquery'],
+    //   exports: 'getVideo'
+    // },
 
-    enterGame: {
-      includes: ['jquery'],
-      exports: 'enterGame'
-    }
+    // enterGame: {
+    //   includes: ['jquery'],
+    //   exports: 'enterGame'
+    // }
   }
 }); // end require.config
 
@@ -66,16 +68,18 @@ require([
   'jquery',
   'lodash',
   'apps/master/app',
-  'headtrackr',
+  // 'headtrackr',
   //'resizeCanvas',
-  'getVideo',
-  'trackFace',
-  'playGame',
-  'score',
-  'enterGame'
-], function($, _, App) {
+  // 'getVideo',
+  // 'trackFace',
+  // 'playGame',
+  // 'score',
+  // 'enterGame',
+  'videoRenderCtrl'
+], function($, _, App, videoRenderCtrl) {
   'use strict';
 
   // Start the application
   App.start();
+  videoRenderCtrl.start();
 });
